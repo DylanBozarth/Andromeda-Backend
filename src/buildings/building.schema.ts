@@ -9,6 +9,9 @@ export class Building {
   description: string;
 
   @Prop()
+  imageSrc: string;
+
+  @Prop()
   cost: number;
 }
 
