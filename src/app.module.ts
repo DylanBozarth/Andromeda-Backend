@@ -10,7 +10,12 @@ import { BuildingService } from './buildings/building.service';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGO_URI, { dbName: 'andromeda' }),
+    MongooseModule.forRoot(
+      process.env.NODE_ENV === 'DEV'
+        ? process.env.LOCAL_MONGO_URI
+        : process.env.MONGO_URI,
+      { dbName: 'andromeda' },
+    ),
     MongooseModule.forFeature([{ name: 'Building', schema: BuildingSchema }]),
   ],
   controllers: [AppController, BuildingController],
