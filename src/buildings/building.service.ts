@@ -25,7 +25,6 @@ export class BuildingService {
     const existingBuilding = await this.buildingModel.findByIdAndUpdate(
       buildingId,
       updateBuildingDto,
-      { new: true },
     );
     if (!existingBuilding) {
       throw new NotFoundException(`Building #${buildingId} not found`);

@@ -65,6 +65,7 @@ export class BuildingController {
       const buildingData = await this.buildingService.getAllBuildings();
       return response.status(HttpStatus.OK).json({
         message: 'All buildings data found successfully',
+        total: buildingData.length,
         buildingData,
       });
     } catch (err) {
