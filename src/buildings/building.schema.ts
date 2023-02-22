@@ -13,6 +13,9 @@ export class Building {
 
   @Prop()
   cost: number;
+
+  @Prop()
+  techLevel: number;
 }
 
 export const BuildingSchema = SchemaFactory.createForClass(Building);

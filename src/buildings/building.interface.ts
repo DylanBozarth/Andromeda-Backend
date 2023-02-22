@@ -5,4 +5,5 @@ export interface IBuilding extends Document {
   readonly description: string;
   readonly imageSrc: string;
   readonly cost: number;
+  readonly techLevel: number;
 }
