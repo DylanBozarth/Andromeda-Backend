@@ -9,4 +9,6 @@ export class CreateBuildingDto {
   readonly imageSrc: string;
   @IsNumber()
   readonly cost: number;
+  @IsNumber()
+  readonly techLevel: number;
 }
