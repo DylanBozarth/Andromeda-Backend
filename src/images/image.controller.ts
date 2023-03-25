@@ -28,7 +28,7 @@ export class ImageController {
   private readonly imgurUploader: ImgurUploader;
 
   constructor() {
-    this.imgurUploader = new ImgurUploader({ clientid: '58d59cc21be2835' });
+    this.imgurUploader = new ImgurUploader({ clientid: '' });
   }
 
   @Get()
