@@ -21,17 +21,19 @@
     "postinstall": "export PATH=./node_modules/.bin:$PATH"
   },
   "dependencies": {
+    "@nestjs/cli": "^9.0.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/mapped-types": "^1.2.2",
     "@nestjs/mongoose": "^9.2.1",
     "@nestjs/platform-express": "^9.0.0",
-    "@nestjs/cli": "^9.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "graphql": "^16.6.0",
+    "imgur-upload": "^0.1.2",
     "mongoose": "^6.9.0",
+    "multer": "^1.4.5-lts.1",
     "node": "^16.13.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
