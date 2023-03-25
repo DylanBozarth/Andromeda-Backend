@@ -3,6 +3,8 @@ import {
   Post,
   UseInterceptors,
   UploadedFile,
+  Get,
+  Res,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
@@ -27,6 +29,21 @@ export class ImageController {
 
   constructor() {
     this.imgurUploader = new ImgurUploader({ clientid: '58d59cc21be2835' });
+  }
+
+  @Get()
+  async healthCheck(@Res() response) {
+    return response.status(205);
+    // try {
+    //   const buildingData = await this.buildingService.getAllBuildings();
+    //   return response.status(HttpStatus.OK).json({
+    //     message: 'All buildings data found successfully',
+    //     total: buildingData.length,
+    //     buildingData,
+    //   });
+    // } catch (err) {
+    //   return response.status(err.status).json(err.response);
+    // }
   }
 
   @Post('upload')
