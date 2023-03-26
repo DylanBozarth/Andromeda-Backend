@@ -19,7 +19,7 @@ import { ImageController } from './images/image.controller';
     ),
     MongooseModule.forFeature([{ name: 'Building', schema: BuildingSchema }]),
   ],
-  controllers: [AppController, BuildingController, ImageController],
+  controllers: [AppController, BuildingController],
   providers: [AppService, BuildingService],
 })
 export class AppModule {}
