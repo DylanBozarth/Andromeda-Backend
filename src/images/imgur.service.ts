@@ -10,7 +10,7 @@ export class ImgurService {
   async uploadImage(file: File): Promise<string> {
     try {
       const result = await imgurUploader(file.buffer, {
-        clientId: this.configService.get(process.env.IMGUR_CLIENT_ID),
+        clientId: this.configService.get('IMGUR_CLIENT_ID'),
       });
       return result.link;
     } catch (error) {
