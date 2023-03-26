@@ -7,6 +7,7 @@ import { BuildingController } from './buildings/building.controller';
 import { BuildingSchema } from './buildings/building.schema';
 import { BuildingService } from './buildings/building.service';
 import { ImageController } from './images/image.controller';
+import { ImgurService } from './images/imgur.service';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { ImageController } from './images/image.controller';
     ),
     MongooseModule.forFeature([{ name: 'Building', schema: BuildingSchema }]),
   ],
-  controllers: [AppController, BuildingController],
-  providers: [AppService, BuildingService],
+  controllers: [AppController, BuildingController, ImageController],
+  providers: [AppService, BuildingService, ImgurService],
 })
 export class AppModule {}
