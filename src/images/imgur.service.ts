@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import * as imgurUploader from 'imgur-uploader';
+import imgurUploader from 'imgur-uploader';
 import { File } from 'multer';
 
 @Injectable()
