@@ -28,7 +28,7 @@ export class ImageController {
   private readonly imgurUploader: ImgurUploader;
 
   constructor() {
-    this.imgurUploader = new ImgurUploader({ clientid: '' });
+    this.imgurUploader = new ImgurUploader({ clientid: process.env.IMGUR_CLIENT_ID});
   }
 
   @Get()
