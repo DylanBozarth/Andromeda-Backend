@@ -28,12 +28,14 @@ export class ImageController {
   private readonly imgurUploader: ImgurUploader;
 
   constructor() {
-    this.imgurUploader = new ImgurUploader({ clientid: process.env.IMGUR_CLIENT_ID});
+    this.imgurUploader = new ImgurUploader({
+      clientid: process.env.IMGUR_CLIENT_ID,
+    });
   }
 
   @Get()
-  async healthCheck(@Res() response) {
-    return response.status(205);
+  healthCheck() {
+    return 'healthy';
     // try {
     //   const buildingData = await this.buildingService.getAllBuildings();
     //   return response.status(HttpStatus.OK).json({
