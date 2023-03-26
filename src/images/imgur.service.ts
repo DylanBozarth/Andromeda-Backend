@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import imgurUploader from 'imgur-uploader';
 import { File } from 'multer';
@@ -14,7 +14,13 @@ export class ImgurService {
       });
       return result.link;
     } catch (error) {
-      throw new Error('Failed to upload image to Imgur');
+      throw new HttpException(
+        {
+          status: HttpStatus.SERVICE_UNAVAILABLE,
+          error: `Failed to upload image to Imgur: ${error.message}`,
+        },
+        HttpStatus.SERVICE_UNAVAILABLE,
+      );
     }
   }
 }
