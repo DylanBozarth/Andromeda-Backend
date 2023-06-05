@@ -1,23 +1,23 @@
 {
+  "extends": "@strapi/typescript-utils/tsconfigs/server",
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "typeRoots": ["./node_modules/@types", "./node_modules/@nestjs/types"],
-    "types": ["node", "@nestjs/mongoose"]
-  }
+    "outDir": "dist",
+    "rootDir": "."
+  },
+  "include": [
+    "./",
+    "./**/*.ts",
+    "./**/*.js",
+    "src/**/*.json"
+  ],
+  "exclude": [
+    "node_modules/",
+    "build/",
+    "dist/",
+    ".cache/",
+    ".tmp/",
+    "src/admin/",
+    "**/*.test.*",
+    "src/plugins/**"
+  ]
 }
