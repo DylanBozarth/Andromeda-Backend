@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "systems",
+  "info": {
+    "singularName": "system",
+    "pluralName": "systems",
+    "displayName": "system",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "systemName": {
+      "type": "string"
+    }
+  }
+}
