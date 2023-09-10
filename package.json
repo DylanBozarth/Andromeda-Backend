@@ -1,31 +1,14 @@
 {
-  "name": "my-project",
-  "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
+  "name": "andromeda-backend",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "start": "bun run index.ts"
   },
-  "dependencies": {
-    "@strapi/plugin-i18n": "4.10.7",
-    "@strapi/plugin-users-permissions": "4.10.7",
-    "@strapi/strapi": "4.10.7",
-    "@strapi/utils": "^4.13.1",
-    "better-sqlite3": "8.0.1",
-    "railway": "^2.0.17"
-  },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "f48b4005-12fb-4339-8c1c-7d9e0148593a"
-  },
-  "engines": {
-    "node": ">=14.19.1 <=18.x.x",
-    "npm": ">=6.0.0"
-  },
-  "license": "MIT"
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
