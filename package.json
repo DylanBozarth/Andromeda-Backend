@@ -1,14 +1,15 @@
 {
-  "name": "andromeda-backend",
-  "module": "index.ts",
-  "type": "module",
+  "name": "app",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
+  },
+  "dependencies": {
+    "elysia": "latest"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
-  "scripts": {
-    "start": "bun ./index.tsx"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+  "module": "src/index.js"
 }
