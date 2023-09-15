@@ -1,14 +1,12 @@
-import { db } from './database/dbConnection';
+import { Elysia } from "elysia";
+import { Login } from "./login/login";
+import { Sectors } from "./sectors/sectors";
 
-const server = Bun.serve({
-    port: process.env.PORT,
-    development: true,
-    fetch(req) {
-      const url = new URL(req.url);
-      if (url.pathname === "/") return new Response(`Home page!`);
-      if (url.pathname === "/db") return new Response("database");
-      return new Response(`404!`);
-    },
-  });
-  
-  console.log(`Listening on http://localhost:${server.port} ...`);
+const app = new Elysia().get("/", () => "DA BACKEND")
+.get('/sectors', () => Sectors)
+.get('/login', () => Login)
+.listen(2999);
+
+console.log(
+  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+);
