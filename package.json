@@ -8,7 +8,8 @@
   "dependencies": {
     "@elysiajs/cookie": "^0.6.1",
     "@elysiajs/jwt": "^0.6.4",
-    "elysia": "latest"
+    "elysia": "latest",
+    "railway": "^2.0.17"
   },
   "devDependencies": {
     "bun-types": "latest"
