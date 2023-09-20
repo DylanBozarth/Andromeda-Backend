@@ -1,6 +1,7 @@
 import { Elysia } from "elysia";
 import { cookie } from "@elysiajs/cookie";
 import { jwt } from "@elysiajs/jwt";
+/*
 export const Login = new Elysia()
     .group("/login", (app) =>
         app
@@ -12,3 +13,4 @@ export const Login = new Elysia()
             )
             .use(cookie())
     )
+*/
