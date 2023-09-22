@@ -50,15 +50,8 @@ const animalSchema = new mongoose.Schema(
         NCO: {type: Array<NCO>, required: true},
         sectorName: {type: String, required: true},
         fleetsInTransit: []
-    },
-    {
-      methods: {
-        log() {
-          console.log(this.systems);
-        },
-      },
     }
   );
   
-  export type Sector = mongoose.InferSchemaType<typeof sectorSchema>;
-  export const Sector = mongoose.model('Sector', sectorSchema);
+  export type SectorModel = mongoose.InferSchemaType<typeof sectorSchema>;
+  export const SectorModel = mongoose.model('Sector', sectorSchema);

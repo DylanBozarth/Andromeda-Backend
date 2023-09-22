@@ -1,13 +1,15 @@
 import { Elysia } from "elysia";
 import * as mongoose from 'mongoose';
-import { Sector } from "./schema/schema";
+import { SectorModel } from "./schema/schema";
 
 await mongoose.connect(`${process.env.MONGOURL}`);
-const app = new Elysia().get("/", () => "DA BACKEND")
 
-.get('/sectora', () => Sector)
-// .get('/login', () => Login)
-.listen(`${process.env.PORT}`);
+const returnSector = await SectorModel;
+const app = new Elysia().get("/", () => "DA BACKEND")
+.get('/sectora', () => {return returnSector.find()})
+.get ('/test', () =>{ return'hello'})
+
+.listen(`${process.env.PORT}`); 
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
