@@ -1,4 +1,4 @@
-import * as mongoose from 'mongoose';
+const mongoose =  require('mongoose');
 export interface Planet {
   name: string
   class: string,
@@ -34,5 +34,5 @@ const sectorSchema = new mongoose.Schema(
   }
 );
 
-export type SectorModel = mongoose.InferSchemaType<typeof sectorSchema>;
+//export type SectorModel = mongoose.InferSchemaType<typeof sectorSchema>;
 export const SectorModel = mongoose.model('Sector', sectorSchema);
