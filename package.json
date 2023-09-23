@@ -1,21 +1,17 @@
 {
-  "name": "app",
-  "version": "1.0.50",
+  "name": "andromeda-backend",
+  "version": "1.0.0",
+  "description": "## Getting Started Install dependencies ```bash bun install ```",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@elysiajs/cookie": "^0.6.1",
-    "@elysiajs/jwt": "^0.6.4",
-    "@prisma/client": "^5.3.1",
-    "elysia": "latest",
-    "mongodb": "^6.1.0",
+    "dotenv": "^16.3.1",
+    "mongo": "^0.1.0",
     "mongoose": "^7.5.2",
-    "railway": "^2.0.17"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+    "nodemon": "^3.0.1"
+  }
 }
