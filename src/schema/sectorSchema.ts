@@ -1,14 +1,20 @@
-const mongoose =  require('mongoose');
-import { SystemInterface } from "src/interfaces/sector-and-systems";
-import { NCOInterface } from "src/interfaces/sector-and-systems";
+import { SectorInterface, SystemInterface, NCOInterface } from "src/interfaces/sector-and-systems";
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-const sectorSchema = new mongoose.Schema(
-  {
-    systems: { type: Array<SystemInterface>, required: true },
-    NCO: { type: Array<NCOInterface>, required: true },
-    sectorName: { type: String, required: true },
-    fleetsInTransit: []
-  }
-); 
+import { HydratedDocument } from 'mongoose';
 
-export const SectorSchema = SchemaFactory.createForClass(sectorSchema);
+export type sectorDocument = HydratedDocument<SectorInterface>;
+export class sector {
+  @Prop()
+  systems: Array<SystemInterface>
+
+  @Prop()
+  NCO: Array<NCOInterface>
+
+  @Prop()
+  sectorName: String
+
+  @Prop()
+  fleetsInTransit: []
+}
+
+export const sectorSchema = SchemaFactory.createForClass(sector);
