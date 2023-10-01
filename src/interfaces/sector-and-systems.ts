@@ -1,11 +1,19 @@
-export interface System {
+export interface SectorInterface {
+    systems: { type: Array<SystemInterface>, required: true },
+    NCO: { type: Array<NCOInterface>, required: true },
+    sectorName: { type: String, required: true },
+    fleetsInTransit: []
+  }
+
+
+  export interface SystemInterface {
     systemStar: string;
-    systemPlanets: Array<Planet>;
+    systemPlanets: Array<PlanetInterface>;
     systemName: string;
     cords: string;
-    activePlanet: Planet
+    activePlanet: PlanetInterface
 }
-export interface Planet {
+export interface PlanetInterface {
     name: string
     class: string,
     buildings: Array<string>,
@@ -16,3 +24,10 @@ export interface Planet {
     orbit: Array<string>, // ships in orbit can be attack in fleet combat like in regular space
     ownership: string,
 }
+export interface NCOInterface { // NCO = Non-conolizable-object
+    type: string;
+    name: string;
+    effect: string;
+    cords: string;
+    fleets: Array<string>;
+  }
