@@ -9,7 +9,7 @@ ConfigModule.forRoot() // import the ENV file
 
 @Module({
   imports: [MongooseModule.forRoot(`${process.env.MONGOURL}`, {dbName: 'Andromeda'}), sectorModule],
-  controllers: [],
-  providers: [],
+  controllers: [SectorsController],
+  providers: [SectorsService],
 })
 export class AppModule {}
