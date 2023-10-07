@@ -1,15 +1,12 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { sectorSchema } from 'src/schema/sectorSchema';
+import { sectorSchema } from '../schema/sectorSchema';
+import { SectorsService } from './sectors.service';
 import { SectorsController } from './sectors.controller';
-import { SectorService } from './sectors.service';
-
 
 @Module({
-    imports: [
-      MongooseModule.forFeature([{ name: 'Sector', schema: sectorSchema }]),
-    ],
-    controllers: [SectorsController],
-    providers: [SectorService],
-  })
-export class SectorsModule {}
+  imports: [MongooseModule.forFeature([{ name: 'Sector', schema: sectorSchema }])],
+  providers: [SectorsService],
+  controllers: [SectorsController],
+})
+export class sectorModule {}
