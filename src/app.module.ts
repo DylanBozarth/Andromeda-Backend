@@ -8,7 +8,7 @@ import { SectorModule } from './sectors/sectors.module';
 ConfigModule.forRoot() // import the ENV file
 
 @Module({
-  imports: [MongooseModule.forRoot(`${process.env.MONGOURL}`, {dbName: 'Andromeda'}), SectorModule],
+  imports: [MongooseModule.forRoot(`${process.env.MONGO_URL}`, {dbName: 'Andromeda'}), SectorModule],
   controllers: [SectorsController],
   providers: [SectorsService],
 })
