@@ -4,11 +4,13 @@ import { SectorsController } from './sectors/sectors.controller';
 import { SectorsService } from './sectors/sectors.service';
 import { ConfigModule } from '@nestjs/config';
 import { SectorModule } from './sectors/sectors.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 ConfigModule.forRoot() // import the ENV file
 
 @Module({
-  imports: [MongooseModule.forRoot(`${process.env.MONGO_URL}`, {dbName: 'Andromeda'}), SectorModule],
+  imports: [MongooseModule.forRoot(`${process.env.MONGO_URL}`, {dbName: 'Andromeda'}), SectorModule, AuthModule, UsersModule],
   controllers: [SectorsController],
   providers: [SectorsService],
 })
