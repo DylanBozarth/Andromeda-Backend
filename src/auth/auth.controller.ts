@@ -6,7 +6,7 @@ import { UsersService } from '../users/users.service';
 export class AuthController {
     constructor(private usersService: UsersService) {}
 
-    @UseGuards(AuthGuard)
+    @UseGuards(AuthGuard('jwt'))
     @Post('login')
     async login(@Request() req) {
         return req.user;
