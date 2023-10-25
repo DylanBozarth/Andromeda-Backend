@@ -3,12 +3,23 @@ import { UserInterface } from 'src/interfaces/user';
 
 @Injectable()
 export class UsersService {
-    private readonly users: UserInterface[];
-
+    // private readonly users: UserInterface[];
+    private readonly users = [
+        {
+          userId: 'test',
+          userName: 'TESTMAN',
+          password: '123456',
+        },
+        {
+          userId: 'test',
+          userName: 'maria',
+          password: 'guess',
+        },
+      ];
     constructor() {
         this.users = [
             {
-                userId: Date.now().toString(),
+                userId: 'test',
                 userName: 'test',
                 password: 'test',
             }
