@@ -1,20 +1,13 @@
-import { Controller, Request, Post, UseGuards } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
-import { UsersService } from '../users/users.service';
+import { Body, Controller, Post, HttpCode, HttpStatus } from '@nestjs/common';
+import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController {
-    constructor(private usersService: UsersService) {}
+  constructor(private authService: AuthService) {}
 
-    @UseGuards(AuthGuard('jwt'))
-    @Post('login')
-    async login(@Request() req) {
-        return req.user;
-    }
-
-    @Post('register')
-    async register(@Request() req) {
-        const {username, password} = req.body;
-        return this.usersService.register(username, password);
-    }
+  @HttpCode(HttpStatus.OK)
+  @Post('login')
+  signIn(@Body() signInDto: Record<string, any>) {
+    return this.authService.signIn(signInDto.username, signInDto.password);
+  }
 }
