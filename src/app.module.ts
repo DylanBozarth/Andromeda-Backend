@@ -10,7 +10,7 @@ import { UserModule } from './users/users.module';
 ConfigModule.forRoot() // import the ENV file
 
 @Module({
-  imports: [MongooseModule.forRoot(`${process.env.MONGOURL}`, {dbName: 'Andromeda'}), SectorModule, AuthModule, UserModule],
+  imports: [MongooseModule.forRoot(`${process.env.MONGO_URL}`, {dbName: 'Andromeda'}), SectorModule, AuthModule, UserModule], // Do not change mongo_url from snake case
   controllers: [SectorsController],
   providers: [SectorsService],
 })
