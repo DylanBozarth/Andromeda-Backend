@@ -7,11 +7,18 @@ import { UserInterface } from 'src/interfaces/user';
 export class UsersService {
     constructor(@InjectModel('user') private readonly userModel: Model<UserInterface>) { }
     async createUser(username: string, password: string): Promise<UserInterface> {
-        return this.userModel.create({
-            username,
-            password,
-        });
-    }
+        try {
+            const newUser = await this.userModel.create({
+                username,
+                password,
+            });
+            return newUser;
+        } catch (error) {
+            // Handle the error appropriately (e.g., log the error or throw it)
+            console.error("Error creating a new user:", error);
+            throw error;
+        }
+    }    
     async getUser(query: object ): Promise<UserInterface> {
         return this.userModel.findOne(query);
     }

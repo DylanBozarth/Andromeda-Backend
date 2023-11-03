@@ -12,7 +12,7 @@ export class UsersController {
         @Body('password') password: string,
         @Body('username') username: string,
     ): Promise<UserInterface> {
-        const saltOrRounds = 10;
+        // const saltOrRounds = 10; Will use later
         // const hashedPassword = await bcrypt.hash(password, saltOrRounds);
         const result = await this.usersService.createUser(
             username,
