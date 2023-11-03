@@ -7,7 +7,7 @@ import { UserInterface } from 'src/interfaces/user';
 export class UsersController {
     constructor(private readonly usersService: UsersService) { }
 
-    @Post('/signup')
+    @Post('/register')
     async createUser(
         @Body('password') password: string,
         @Body('username') username: string,
