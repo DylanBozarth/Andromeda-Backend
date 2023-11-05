@@ -18,8 +18,8 @@ export class UsersService {
             console.error("Error creating a new user:", error);
             throw error;
         }
-    }    
-    async getUser(query: object ): Promise<UserInterface> {
+    }
+    async getUser(query: object): Promise<UserInterface> {
         return this.userModel.findOne(query);
     }
 }

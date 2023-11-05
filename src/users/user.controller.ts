@@ -7,18 +7,16 @@ import { UserInterface } from 'src/interfaces/user';
 export class UsersController {
     constructor(private readonly usersService: UsersService) { }
 
-    @Post('/register')
+    @Post("/register")
     async createUser(
-        @Body('password') password: string,
-        @Body('username') username: string,
+        @Body("password") password: string,
+        @Body("username") username: string
     ): Promise<UserInterface> {
-        // const saltOrRounds = 10; Will use later
-        // const hashedPassword = await bcrypt.hash(password, saltOrRounds);
-        const result = await this.usersService.createUser(
-            username,
-            password,
-        );
-        console.log(result)
+        console.log({ password, username });
+        const saltOrRounds = 10; //Will use later
+        const hashedPassword = await bcrypt.hash(password, saltOrRounds);
+        const result = await this.usersService.createUser(username, hashedPassword);
+        console.log(result);
         return result;
     }
 }
